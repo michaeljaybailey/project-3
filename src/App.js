@@ -18,10 +18,10 @@ function App() {
       <div>
         {/* <Navbar /> */}
         <Wrapper>
-          <Route exact path="/account" component={Account} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/friends" component={Friends} />
-          <Route exact path="/inputrecipe" component={InputRecipe} />
+          <Route exact path="/account/id:/" component={Account} />
+          <Route exact path="/account/id:/search" component={Search} />
+          <Route exact path="/account/id:/friends" component={Friends} />
+          <Route exact path="/account/id:/inputrecipe" component={InputRecipe} />
         </Wrapper>
         {/* <Footer /> */}
       </div>
