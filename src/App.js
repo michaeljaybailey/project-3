@@ -5,8 +5,8 @@ import Friends from "./pages/Friends";
 import InputRecipe from "./pages/InputRecipe";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
 
@@ -16,14 +16,14 @@ function App() {
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <Wrapper>
           <Route exact path="/account" component={Account} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/inputrecipe" component={InputRecipe} />
         </Wrapper>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
