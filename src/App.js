@@ -13,11 +13,11 @@ import Wrapper from "./components/Wrapper";
 function App() {
   return (
     <Router>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/login" component={Login} />
       <div>
         <Navbar />
         <Wrapper>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/friends" component={Friends} />
