@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInSide() {
+function Login() {
   const classes = useStyles();
 
   return (
@@ -130,3 +130,5 @@ export default function SignInSide() {
     </Grid>
   );
 }
+
+export default Login
