@@ -7,33 +7,33 @@ import { List, ListItem } from "../../src/components/List";
 import { Input, TextArea, FormBtn } from "../../src/components/Form";
 //add link to navbar
 
-class Books extends Component {
+class InputRecipe extends Component {
   // Setting our component's initial state
   state = {
-    books: [],
+    recipes: [],
     title: "",
-    author: "",
-    synopsis: ""
+    ingredients: "",
+    summary: ""
   };
 
-  // When the component mounts, load all books and save them to this.state.books
+  // When the component mounts, load all recipes and save them to this.state.recipes
   componentDidMount() {
-    this.loadBooks();
+    this.loadInputRecipe();
   }
 
-  // Loads all books  and sets them to this.state.books
-  loadBooks = () => {
-    API.getBooks()
+  // Loads all recipes  and sets them to this.state.recipes
+  loadInputRecipe = () => {
+    API.getInputRecipe()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ recipes: res.data, title: "", ingredients: "", summary: "" })
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  // Deletes a recipe from the database with a given id, then reloads recipes from the db
+  deleteInputRecipe = id => {
+    API.deleteInputRecipe(id)
+      .then(res => this.loadInputRecipe())
       .catch(err => console.log(err));
   };
 
@@ -45,17 +45,17 @@ class Books extends Component {
     });
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
+  // When the form is submitted, use the API.saverecipe method to save the recipe data
+  // Then reload recipes from the database
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
+    if (this.state.title && this.state.ingredients) {
+      API.saveInputRecipe({
         title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+        ingredients: this.state.ingredients,
+        summary: this.state.summary
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadInputRecipe())
         .catch(err => console.log(err));
     }
   };
@@ -66,7 +66,7 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>What recipe should I check?</h1>
             </Jumbotron>
             <form>
               <Input
@@ -76,40 +76,40 @@ class Books extends Component {
                 placeholder="Title (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.ingredients}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="ingredients"
+                placeholder="ingredients (required)"
               />
               <TextArea
-                value={this.state.synopsis}
+                value={this.state.summary}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="summary"
+                placeholder="summary (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.ingredients && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Recipe
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Recipes On My List</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.recipes.length ? (
               <List>
-                {this.state.books.map(book => {
+                {this.state.recipes.map(recipe => {
                   return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
+                    <ListItem key={recipe._id}>
+                      <a href={"/recipes/" + recipe._id}>
                         <strong>
-                          {book.title} by {book.author}
+                          {recipe.title} by {recipe.ingredients}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                      <DeleteBtn onClick={() => this.deleteInputRecipe(recipe._id)} />
                     </ListItem>
                   );
                 })}
@@ -124,4 +124,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default InputRecipe;
