@@ -21,7 +21,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../listItems/listItems';
 import Chart from '../Chart/Chart';
 import Deposits from '../Deposits/Deposits';
-import Orders from '../Orders/Orders';
+import RecipeBox from '../RecipeBox/RecipeBox';
 
 function Copyright() {
   return (
@@ -143,7 +143,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Dashboard
+            Weat
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -185,10 +185,10 @@ export default function Dashboard() {
                 <Deposits />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
+            {/* Recent RecipeBox */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <RecipeBox />
               </Paper>
             </Grid>
           </Grid>

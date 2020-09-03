@@ -35,15 +35,15 @@ export default function Orders() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Recipes</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Date Added</TableCell>
+            <TableCell>Chef</TableCell>
+            <TableCell>Ingredients</TableCell>
+            <TableCell>Recipe Name</TableCell>
+            <TableCell align="right">Budget</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

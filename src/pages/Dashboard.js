@@ -21,7 +21,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import Chart from '../components/Chart/Chart';
 import Deposits from '../components/Deposits/Deposits';
-import Orders from '../components/Orders/Orders';
+import RecipeBox from '../components/RecipeBox/RecipeBox';
 
 function Copyright() {
   return (
@@ -131,19 +131,19 @@ function Dashboard() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar position="absolute" color="pink" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
-            color="inherit"
+            color="secondary"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
             <MenuIcon />
           </IconButton>
-          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Dashboard
+          <Typography component="h1" variant="h6" color="secondary" noWrap className={classes.title}>
+            Weat
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -185,10 +185,10 @@ function Dashboard() {
                 <Deposits />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
+            {/* Recent RecipeBox */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <RecipeBox />
               </Paper>
             </Grid>
           </Grid>
