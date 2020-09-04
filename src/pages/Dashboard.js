@@ -22,6 +22,7 @@ import { mainListItems, secondaryListItems } from '../components/listItems/listI
 import Chart from '../components/Chart/Chart';
 import Deposits from '../components/Deposits/Deposits';
 import RecipeBox from '../components/RecipeBox/RecipeBox';
+import Jumbotron from '../components/Jumbotron';
 
 function Copyright() {
   return (
@@ -173,6 +174,12 @@ function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
+            {/* Jumbotron */}
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <Jumbotron />
+              </Paper>
+            </Grid>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
