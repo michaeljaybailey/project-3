@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Jumbotron from "../../src/components/Jumbotron";
-import DeleteBtn from "../../src/components/DeleteBtn";
-import API from "../src/utils/API";
-import { Col, Row, Container } from "../../src/components/Grid";
-import { List, ListItem } from "../../src/components/List";
-import { Input, TextArea, FormBtn } from "../../src/components/Form";
+import Jumbotron from "../components/Jumbotron";
+import DeleteBtn from "../components/DeleteBtn";
+import API from "../utils/API";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
+import { Input, TextArea, FormBtn } from "../components/Form";
 //add link to navbar
 
 class InputRecipe extends Component {
@@ -13,32 +13,32 @@ class InputRecipe extends Component {
     recipes: [],
     title: "",
     ingredients: "",
-    summary: ""
+    recipe: ""
   };
 
   // When the component mounts, load all recipes and save them to this.state.recipes
   componentDidMount() {
-    this.loadInputRecipe();
+    this.loadRecipe();
   }
 
   // Loads all recipes  and sets them to this.state.recipes
-  loadInputRecipe = () => {
-    API.getInputRecipe()
+  loadRecipe = () => {
+    API.getRecipe()
       .then(res =>
-        this.setState({ recipes: res.data, title: "", ingredients: "", summary: "" })
+        this.setState({ recipes: res.data, title: "", ingredients: "", recipe: "" })
       )
       .catch(err => console.log(err));
   };
 
   // Deletes a recipe from the database with a given id, then reloads recipes from the db
-  deleteInputRecipe = id => {
-    API.deleteInputRecipe(id)
-      .then(res => this.loadInputRecipe())
+  deleteRecipe = id => {
+    API.deleteRecipe(id)
+      .then(res => this.loadRecipe())
       .catch(err => console.log(err));
   };
 
   // Handles updating component state when the user types into the input field
-  handleInputChange = event => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -50,12 +50,12 @@ class InputRecipe extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.ingredients) {
-      API.saveInputRecipe({
+      API.saveRecipe({
         title: this.state.title,
         ingredients: this.state.ingredients,
-        summary: this.state.summary
+        recipe: this.state.recipe
       })
-        .then(res => this.loadInputRecipe())
+        .then(res => this.loadRecipe())
         .catch(err => console.log(err));
     }
   };
@@ -82,10 +82,10 @@ class InputRecipe extends Component {
                 placeholder="ingredients (required)"
               />
               <TextArea
-                value={this.state.summary}
+                value={this.state.recipe}
                 onChange={this.handleInputChange}
-                name="summary"
-                placeholder="summary (Optional)"
+                name="recipe"
+                placeholder="recipe (required)"
               />
               <FormBtn
                 disabled={!(this.state.ingredients && this.state.title)}
@@ -109,7 +109,7 @@ class InputRecipe extends Component {
                           {recipe.title} by {recipe.ingredients}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteInputRecipe(recipe._id)} />
+                      <DeleteBtn onClick={() => this.deleteRecipe(recipe._id)} />
                     </ListItem>
                   );
                 })}
