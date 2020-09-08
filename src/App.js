@@ -8,6 +8,7 @@ import Search from "./pages/Search";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import Recipes from "./pages/Recipes";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/Dashboard/id:/search" component={Search} />
           <Route exact path="/Dashboard/id:/friends" component={Friends} />
           <Route exact path="/Dashboard/id:/inputrecipe" component={InputRecipe} />
+          <Route exact path="/Dashboard/id:/recipes" component={Recipes} />
         </Wrapper>
         {/* <Footer /> */}
       </div>

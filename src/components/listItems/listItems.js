@@ -12,12 +12,14 @@ import ListAltIcon from '@material-ui/icons/ListAlt';
 
 export const mainListItems = (
   <div>
-    <ListItem button>
+    <a href="/Dashboard/id:/"><ListItem button>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
+    </a>
+
     <ListItem button>
       <ListItemIcon>
         <RestaurantIcon />
@@ -30,12 +32,14 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Fellow Chefs" />
     </ListItem>
+    <a href="/Dashboard/id:/inputrecipe">
     <ListItem button>
       <ListItemIcon>
         <PlusOneIcon />
       </ListItemIcon>
       <ListItemText primary="Submit New" />
     </ListItem>
+    </a>
     <ListItem button>
       <ListItemIcon>
         <SettingsApplicationsIcon />
