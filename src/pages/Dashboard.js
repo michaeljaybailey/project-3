@@ -21,7 +21,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import Feed from '../components/Feed/Feed';
-import Deposits from '../components/Deposits/Deposits';
+import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -224,25 +224,25 @@ function Dashboard() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="lg" maxHeight="36ch" className={classes.container}>
           <Grid container spacing={3}>
             {/* Feed */}
-            <Grid item sm={12} md={8} lg={9}>
+            <Grid item sm={12} md={8} lg={8}>
               <Paper className={fixedHeightPaper}>
                 <Feed />
               </Paper>
             </Grid>
-            Advertisement
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <AdGrid />
               </Paper>
+              Advertisement
             </Grid>
-          
+            
           </Grid>
           <Box pt={4}>
             <Copyright />
-          </Box>s
+          </Box>
         </Container>
       </main>
     </div>

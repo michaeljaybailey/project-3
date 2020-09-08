@@ -20,7 +20,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
-import Deposits from '../components/Deposits/Deposits';
+import AdGrid from '../components/AdGrid/AdGrid';
 import RecipeBox from '../components/RecipeBox/RecipeBox';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
@@ -233,10 +233,10 @@ function Recipes() {
                 <FormNew />
               </Paper>
             </Grid>
-            {/* Recent Deposits */}
+            {/* Recent AdGrid */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <AdGrid />
               </Paper>
             </Grid>
             {/* Recent RecipeBox */}
