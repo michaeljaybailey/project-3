@@ -46,35 +46,44 @@ export const mainListItems = (
       <ListItemText primary="Submit New" />
     </ListItem>
     </a>
+
+    <a href="/Dashboard/id:/inputrecipe">
     <ListItem button>
       <ListItemIcon>
         <SettingsApplicationsIcon />
       </ListItemIcon>
       <ListItemText primary="Account Settings" />
     </ListItem>
+    </a>
   </div>
 );
 
 export const secondaryListItems = (
   <div>
     <ListSubheader inset>New Recipes</ListSubheader>
+    <a href="/Dashboard/id:/singlerecipe/id:">
     <ListItem button>
       <ListItemIcon>
         <ListAltIcon />
       </ListItemIcon>
       <ListItemText primary="Glass of water" />
     </ListItem>
+    </a>
+    <a href="/Dashboard/id:/singlerecipe/id:">
     <ListItem button>
       <ListItemIcon>
         <ListAltIcon />
       </ListItemIcon>
       <ListItemText primary="Bowl of Cereal" />
     </ListItem>
+    </a>
+    <a href="/Dashboard/id:/singlerecipe/id:">
     <ListItem button>
       <ListItemIcon>
         <ListAltIcon />
       </ListItemIcon>
       <ListItemText primary="Toast" />
     </ListItem>
+    </a>
   </div>
 );

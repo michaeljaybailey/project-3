@@ -9,6 +9,7 @@ import SearchPage from "./pages/SearchPage";
 // import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import Recipes from "./pages/Recipes";
+import SingleRecipe from "./pages/SingleRecipe";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/Dashboard/id:/friends" component={Friends} />
           <Route exact path="/Dashboard/id:/inputrecipe" component={InputRecipe} />
           <Route exact path="/Dashboard/id:/recipes" component={Recipes} />
+          <Route exact path="/Dashboard/id:/singlerecipe/id:/" component={SingleRecipe} />
         </Wrapper>
         {/* <Footer /> */}
       </div>
