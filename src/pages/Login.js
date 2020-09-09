@@ -12,7 +12,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import AuthNav from "../components/Navbar/index.js"
+import Auth from '../components/Auth/Auth'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -59,11 +60,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-// const LoginButton = () => {
-//   const { loginWithRedirect } = useAuth0();
 
-//   return <button onClick={() => loginWithRedirect()}>Log In</button>;
-// };
 
 
 function Login() {
@@ -116,6 +113,7 @@ function Login() {
               className={classes.submit}
               
             >
+              <Auth />
               Sign In
             </Button>
             <Grid container>
