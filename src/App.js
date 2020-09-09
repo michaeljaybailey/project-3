@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Account from "./pages/Account";
+import Dashboard from "./pages/Dashboard";
 import Friends from "./pages/Friends";
 import InputRecipe from "./pages/InputRecipe";
 import Login from "./pages/Login";
-import Search from "./pages/Search";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
+import SearchPage from "./pages/SearchPage";
 import Wrapper from "./components/Wrapper";
+import Recipes from "./pages/Recipes";
+import SingleRecipe from "./pages/SingleRecipe";
 
 
 function App() {
@@ -18,10 +18,12 @@ function App() {
       <div>
         {/* <Navbar /> */}
         <Wrapper>
-          <Route exact path="/account/id:/" component={Account} />
-          <Route exact path="/account/id:/search" component={Search} />
-          <Route exact path="/account/id:/friends" component={Friends} />
-          <Route exact path="/account/id:/inputrecipe" component={InputRecipe} />
+          <Route exact path="/Dashboard/id:/" component={Dashboard} />
+          <Route exact path="/Dashboard/id:/searchpage" component={SearchPage} />
+          <Route exact path="/Dashboard/id:/friends" component={Friends} />
+          <Route exact path="/Dashboard/id:/inputrecipe" component={InputRecipe} />
+          <Route exact path="/Dashboard/id:/recipes" component={Recipes} />
+          <Route exact path="/Dashboard/id:/singlerecipe/id:/" component={SingleRecipe} />
         </Wrapper>
         {/* <Footer /> */}
       </div>

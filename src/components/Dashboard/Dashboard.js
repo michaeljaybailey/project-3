@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { fade } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
@@ -19,11 +18,10 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
-import AdGrid from '../components/AdGrid/AdGrid';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import RecipeCard from '../components/RecipeCard/RecipeCard'
+import { mainListItems, secondaryListItems } from '../listItems/listItems';
+import Chart from '../Chart/Chart';
+import Deposits from '../Deposits/Deposits';
+import RecipeBox from '../RecipeBox/RecipeBox';
 
 function Copyright() {
   return (
@@ -117,47 +115,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  
 }));
 
-function Recipes() {
+export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -171,33 +131,20 @@ function Recipes() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" color="pink" className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
-            color="secondary"
+            color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
             <MenuIcon />
           </IconButton>
-          <Typography component="h1" variant="h6" color="secondary" noWrap className={classes.title}>
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Weat
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
@@ -226,54 +173,22 @@ function Recipes() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            
-            
-          </Grid>
-          <Grid container spacing={3}>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            
-            
-          </Grid>
-          <Grid container spacing={3}>
-          {/* Recent AdGrid */}
-          <Grid item xs={12} md={4} lg={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <AdGrid />
+                <Chart />
+              </Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Deposits />
+              </Paper>
+            </Grid>
+            {/* Recent RecipeBox */}
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <RecipeBox />
               </Paper>
             </Grid>
           </Grid>
@@ -281,10 +196,7 @@ function Recipes() {
             <Copyright />
           </Box>
         </Container>
-
       </main>
     </div>
   );
 }
-
-export default Recipes

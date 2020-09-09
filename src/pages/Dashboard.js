@@ -20,10 +20,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
+import Feed from '../components/Feed/Feed';
 import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import RecipeCard from '../components/RecipeCard/RecipeCard'
 
 function Copyright() {
   return (
@@ -157,7 +157,7 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
-function Recipes() {
+function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -224,67 +224,29 @@ function Recipes() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="lg" maxHeight="36ch" className={classes.container}>
           <Grid container spacing={3}>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
+            {/* Feed */}
+            <Grid item sm={12} md={8} lg={8}>
+              <Paper className={fixedHeightPaper}>
+                <Feed />
+              </Paper>
             </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            
-            
-          </Grid>
-          <Grid container spacing={3}>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            {/* RecipeCards */}
-            <Grid item xs={12} md={8} lg={4}>
-              
-                <RecipeCard />
-              
-            </Grid>
-            
-            
-          </Grid>
-          <Grid container spacing={3}>
-          {/* Recent AdGrid */}
-          <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <AdGrid />
               </Paper>
+              Advertisement
             </Grid>
+            
           </Grid>
           <Box pt={4}>
             <Copyright />
           </Box>
         </Container>
-
       </main>
     </div>
   );
 }
 
-export default Recipes
+export default Dashboard
