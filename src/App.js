@@ -5,8 +5,6 @@ import Friends from "./pages/Friends";
 import InputRecipe from "./pages/InputRecipe";
 import Login from "./pages/Login";
 import SearchPage from "./pages/SearchPage";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import Recipes from "./pages/Recipes";
 import SingleRecipe from "./pages/SingleRecipe";
