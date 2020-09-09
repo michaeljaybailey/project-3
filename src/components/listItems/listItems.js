@@ -20,18 +20,24 @@ export const mainListItems = (
     </ListItem>
     </a>
 
+    <a href="/Dashboard/id:/recipes/">
     <ListItem button>
       <ListItemIcon>
         <RestaurantIcon />
       </ListItemIcon>
       <ListItemText primary="Recipes" />
     </ListItem>
+    </a>
+
+    <a href="/Dashboard/id:/friends/">
     <ListItem button>
       <ListItemIcon>
         <EmojiPeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Fellow Chefs" />
     </ListItem>
+    </a>
+
     <a href="/Dashboard/id:/inputrecipe">
     <ListItem button>
       <ListItemIcon>

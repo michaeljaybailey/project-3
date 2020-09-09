@@ -21,10 +21,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import AdGrid from '../components/AdGrid/AdGrid';
-import RecipeBox from '../components/RecipeBox/RecipeBox';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import FormNew from '../components/FormNew/FormNew';
+import RecipeGrid from '../components/RecipeGrid/RecipeGrid'
 
 function Copyright() {
   return (
@@ -227,11 +226,11 @@ function Recipes() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* FormNew */}
+            {/* InputRecipe2 */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <FormNew />
-              </Paper>
+              
+                <RecipeGrid />
+              
             </Grid>
             {/* Recent AdGrid */}
             <Grid item xs={12} md={4} lg={3}>
@@ -239,12 +238,7 @@ function Recipes() {
                 <AdGrid />
               </Paper>
             </Grid>
-            {/* Recent RecipeBox */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <RecipeBox />
-              </Paper>
-            </Grid>
+            
           </Grid>
           <Box pt={4}>
             <Copyright />
