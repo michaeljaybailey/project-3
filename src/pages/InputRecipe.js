@@ -60,6 +60,7 @@ class InputRecipe extends Component {
     }
   };
 
+  
   render() {
     return (
       <Container fluid>
