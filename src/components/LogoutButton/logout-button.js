@@ -8,7 +8,7 @@ const LogoutButton = () => {
     <Button
       onClick={() =>
         logout({
-          returnTo: window.location.origin,
+          returnTo: 'http://localhost:3000/?email=&password=',
         })
       }
       variant="danger"
