@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Auth from '../components/Auth/Auth'
 
 function Copyright() {
   return (
@@ -58,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
+
+
 function Login() {
   const classes = useStyles();
 
@@ -70,7 +75,7 @@ function Login() {
           <Avatar className={classes.avatar}>
             <MenuBookTwoToneIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography button component="h1" variant="h5">
             Sign in
           </Typography>
           <form className={classes.form} noValidate>
@@ -106,7 +111,9 @@ function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              
             >
+              <Auth />
               Sign In
             </Button>
             <Grid container>
