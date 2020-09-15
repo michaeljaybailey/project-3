@@ -22,10 +22,10 @@ export default function ImgMediaCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
-          height="220"
+          alt="Profile Image"
+          height="250"
           image="https://www.diningandcooking.com/wp-content/uploads/2020/07/d768mpctynd51.jpg"
-          title="Contemplative Reptile"
+          title="Profile Image"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -39,6 +39,9 @@ export default function ImgMediaCard() {
       <CardActions>
         <Button size="small" color="primary">
           Add Chef
+        </Button>
+        <Button size="small" color="primary">
+          Block
         </Button>
         <Button size="small" color="primary">
           Block

@@ -23,9 +23,9 @@ import { mainListItems, secondaryListItems } from '../components/listItems/listI
 import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import RecipeGrid from '../components/RecipeGrid/RecipeGrid'
 import LogoutButton from '../components/LogoutButton/logout-button';
 import { MenuList } from '@material-ui/core';
+import SingleRecipeCard from '../components/SingleRecipeCard/SingleRecipeCard';
 
 
 function Copyright() {
@@ -233,7 +233,7 @@ function SingleRecipe() {
             {/* InputRecipe2 */}
             <Grid item xs={12} md={8} lg={9}>
               
-                <RecipeGrid />
+                <SingleRecipeCard />
               
             </Grid>
             {/* Recent AdGrid */}

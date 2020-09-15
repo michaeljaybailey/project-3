@@ -20,7 +20,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MenuList from '../components/MenuList/index'
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
-import RecipeBox from '../components/RecipeBox/RecipeBox';
+import ProfileCard from '../components/ProfileCard/ProfileCard';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import LogoutButton from '../components/LogoutButton/logout-button';
@@ -228,14 +228,50 @@ function Friends() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-           
-            {/* Recent RecipeBox */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <RecipeBox />
-              </Paper>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
             </Grid>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
+            </Grid>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
+            </Grid>
+            
+            
           </Grid>
+          <Grid container spacing={3}>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
+            </Grid>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
+            </Grid>
+            {/* ProfileCards */}
+            <Grid item xs={12} md={8} lg={4}>
+              
+                <ProfileCard />
+              
+            </Grid>
+            
+            
+          </Grid>
+          
           <Box pt={4}>
             <Copyright />
           </Box>
