@@ -44,7 +44,7 @@ export default function ImgMediaCard() {
           Block
         </Button>
         <Button size="small" color="primary">
-          Block
+          Remove
         </Button>
       </CardActions>
     </Card>

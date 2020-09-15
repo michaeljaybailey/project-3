@@ -26,6 +26,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import RecipeCard from '../components/RecipeCard/RecipeCard'
 import LogoutButton from '../components/LogoutButton/logout-button';
 import { MenuList } from '@material-ui/core';
+import FoodScroll from '../components/FoodScroll/FoodScroll';
 
 
 function Copyright() {
@@ -228,7 +229,9 @@ function Recipes() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
+        <FoodScroll />
         <Container maxWidth="lg" className={classes.container}>
+        
           <Grid container spacing={3}>
             {/* RecipeCards */}
             <Grid item xs={12} md={8} lg={4}>
