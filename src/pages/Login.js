@@ -12,8 +12,8 @@ import Grid from '@material-ui/core/Grid';
 import MenuBookTwoToneIcon from '@material-ui/icons/MenuBookTwoTone';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+import LoginButton from '../components/LoginButton/login-button';
+import SignUpButton from '../components/SignUpButton/signup-button';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -58,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
+
+
 function Login() {
   const classes = useStyles();
 
@@ -100,15 +105,10 @@ function Login() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
+            
+              <LoginButton />
+              <SignUpButton />
+           
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

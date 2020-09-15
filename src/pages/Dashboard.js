@@ -18,12 +18,12 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import Feed from '../components/Feed/Feed';
 import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuList from '../components/MenuList/index';
 
 function Copyright() {
   return (
@@ -200,7 +200,7 @@ function Dashboard() {
           </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <MenuList />
             </Badge>
           </IconButton>
         </Toolbar>

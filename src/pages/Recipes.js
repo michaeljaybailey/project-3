@@ -18,12 +18,15 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import MenuLists from '../components/MenuList/index'
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import RecipeCard from '../components/RecipeCard/RecipeCard'
+import LogoutButton from '../components/LogoutButton/logout-button';
+import { MenuList } from '@material-ui/core';
+
 
 function Copyright() {
   return (
@@ -200,9 +203,10 @@ function Recipes() {
           </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <MenuLists />
             </Badge>
           </IconButton>
+          <LogoutButton />
         </Toolbar>
       </AppBar>
       <Drawer
