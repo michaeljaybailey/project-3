@@ -203,7 +203,7 @@ function Recipes() {
           </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <MenuList />
+              <MenuLists />
             </Badge>
           </IconButton>
           <LogoutButton />

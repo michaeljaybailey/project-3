@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { makeStyles } from '@material-ui/core/styles';
+import Feed from '../Feed/Feed';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -76,9 +77,7 @@ export default function MenuListComposition() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <Feed />
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

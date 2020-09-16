@@ -24,6 +24,8 @@ import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuList from '../components/MenuList/index';
+import LogoutButton from '../components/LogoutButton/logout-button';
+
 
 function Copyright() {
   return (
@@ -202,6 +204,7 @@ function Dashboard() {
             <Badge badgeContent={4} color="secondary">
               <MenuList />
             </Badge>
+            <LogoutButton />
           </IconButton>
         </Toolbar>
       </AppBar>
