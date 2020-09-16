@@ -12,7 +12,7 @@ const SignupButton = () => {
         })
       }
       variant="primary"
-      className="btn-margin"
+      className="ml-2"
     >
       Sign Up
     </Button>

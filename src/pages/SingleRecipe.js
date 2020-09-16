@@ -18,13 +18,14 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import MenuLists from '../components/MenuList/index'
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import AdGrid from '../components/AdGrid/AdGrid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import RecipeGrid from '../components/RecipeGrid/RecipeGrid'
 import LogoutButton from '../components/LogoutButton/logout-button';
+import { MenuList } from '@material-ui/core';
+import SingleRecipeCard from '../components/SingleRecipeCard/SingleRecipeCard';
 
 
 function Copyright() {
@@ -202,7 +203,7 @@ function SingleRecipe() {
           </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <MenuLists />
             </Badge>
           </IconButton>
           <LogoutButton />
@@ -232,7 +233,7 @@ function SingleRecipe() {
             {/* InputRecipe2 */}
             <Grid item xs={12} md={8} lg={9}>
               
-                <RecipeGrid />
+                <SingleRecipeCard />
               
             </Grid>
             {/* Recent AdGrid */}

@@ -105,17 +105,10 @@ function Login() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              
-            >
+            
               <LoginButton />
               <SignUpButton />
-            </Button>
+           
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

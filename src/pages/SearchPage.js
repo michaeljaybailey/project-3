@@ -18,7 +18,7 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import MenuLists from '../components/MenuList/index'
 import { mainListItems, secondaryListItems } from '../components/listItems/listItems';
 import Chart from '../components/Chart/Chart';
 import AdGrid from '../components/AdGrid/AdGrid';
@@ -203,7 +203,7 @@ function SearchPage() {
           </div>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <MenuLists />
             </Badge>
           </IconButton>
           <LogoutButton />
